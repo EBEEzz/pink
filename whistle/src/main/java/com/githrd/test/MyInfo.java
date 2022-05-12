@@ -19,6 +19,7 @@ public class MyInfo extends HttpServlet {
 		
 		resp.setCharacterEncoding("UTF-8");
 		PrintWriter pw = resp.getWriter();
+		/*
 		pw.println("{");
 		pw.println("\"mno\": \"" + mVO.getMno() + "\",");
 		pw.println("\"name\": \"" + mVO.getName() + "\",");
@@ -29,6 +30,8 @@ public class MyInfo extends HttpServlet {
 		pw.println("\"savename\": \"" + mVO.getSavename() + "\",");
 		pw.println("\"sdate\": \"" + mVO.getSdate() + "\"");
 		pw.println("}");
+		*/
+		pw.print(mVO.getJson());
 	}
 
 }

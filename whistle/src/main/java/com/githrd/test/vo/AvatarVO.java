@@ -41,5 +41,15 @@ public class AvatarVO {
 	public void setGen(String gen) {
 		this.gen = gen;
 	}
+	public String getJson() {
+		StringBuffer buff = new StringBuffer();
+		buff.append("{\r\n");
+		buff.append("\"ano\": \"" + ano + "\",\r\n");
+		buff.append("\"savename\": \"" + savename + "\",\r\n");
+		buff.append("\"dir\": \"" + dir + "\",\r\n");
+		buff.append("\"gen\": \"" + gen + "\"\r\n");
+		buff.append("}");
+		return buff.toString();
+	}
 	
 }
