@@ -17,7 +17,7 @@ public class LoginProc extends HttpServlet {
 		String sid = (String) req.getSession().getAttribute("SID");
 		if(sid != null) {
 			//이미 로그인 한 경우이므로 메인으로 리다이렉트
-			resp.sendRedirect("/whistle/");
+			resp.sendRedirect("/whistle/test/");
 			return;
 		}
 		
@@ -48,7 +48,7 @@ public class LoginProc extends HttpServlet {
 			//로그인 처리
 			req.getSession().setAttribute("SID", pid);
 			//메인페이지로 리다이렉트
-			resp.sendRedirect("/whistle/");
+			resp.sendRedirect("/whistle/test/");
 		} else {
 			//로그인페이지로 돌려보낸다.
 			resp.sendRedirect("/whistle/test/login.pink");

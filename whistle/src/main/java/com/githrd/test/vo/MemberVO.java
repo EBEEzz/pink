@@ -1,4 +1,4 @@
-package com.githrd.vo;
+package com.githrd.test.vo;
 
 import java.sql.Time;
 import java.text.SimpleDateFormat;
@@ -57,7 +57,7 @@ public class MemberVO {
 		return sdate;
 	}
 	public void setSdate() {
-		SimpleDateFormat form1 = new SimpleDateFormat("yyyy년 MM월 dd일 ");
+		SimpleDateFormat form1 = new SimpleDateFormat("yyyy/MM/dd ");
 		SimpleDateFormat form2 = new SimpleDateFormat("HH:mm:ss");
 		sdate = form1.format(jdate) + form2.format(jtime);
 	}
@@ -75,11 +75,6 @@ public class MemberVO {
 	}
 	public void setJtime(Time jtime) {
 		this.jtime = jtime;
-	}
-	@Override
-	public String toString() {
-		return "MemberVO [mno=" + mno + ", name=" + name + ", id=" + id + ", mail=" + mail
-					+ ", tel=" + tel + "gen=" + gen + ", savename=" + savename + "sdate=" + sdate + "]";
 	}
 
 }

@@ -4,7 +4,7 @@ import java.sql.*;
 
 import com.githrd.test.db.*;
 import com.githrd.test.sql.*;
-import com.githrd.vo.MemberVO;
+import com.githrd.test.vo.*;
 
 public class MemberDao {
 	private JenyJDBC db;
@@ -59,16 +59,26 @@ public class MemberDao {
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
 			rs.next();
-
-			mVO.setMno(rs.getInt("mno"));
-			mVO.setName(rs.getString("name"));
-			mVO.setId(rs.getString("id"));
-			mVO.setMail(rs.getString("mail"));
-			mVO.setTel(rs.getString("tel"));
-			mVO.setGen(rs.getString("m.gen"));
-			mVO.setSavename(rs.getString("savename"));
-			mVO.setJdate(rs.getDate("joindate"));
-			mVO.setJtime(rs.getTime("joindate"));
+			
+			int mno = rs.getInt("mno");
+			String name = rs.getString("name");
+			String mid = rs.getString("id");
+			String mail = rs.getString("mail");
+			String tel = rs.getString("tel");
+			String gen = rs.getString("gen");
+			String savename = rs.getString("savename");
+			Date jdate = rs.getDate("joindate");
+			Time jtime = rs.getTime("joindate");
+			
+			mVO.setMno(mno);
+			mVO.setName(name);
+			mVO.setId(mid);
+			mVO.setMail(mail);
+			mVO.setTel(tel);
+			mVO.setGen(gen);
+			mVO.setSavename(savename);
+			mVO.setJdate(jdate);
+			mVO.setJtime(jtime);
 			mVO.setSdate();
 			
 		} catch(Exception e) {

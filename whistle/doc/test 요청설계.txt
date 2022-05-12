@@ -46,6 +46,43 @@
 			redirect)
 				성공) /whistle/
 				실패) alert('로그인에 실패하였습니다.');
+--------------------------------------------------------------------------------------
+
+#아바타 관련 요청 설계
+
+# 아바타 버튼리스트 폼보기 요청
+요청내용 : /whistle/test/avtList.pink
+파라미터 : 무
+컨트롤러 : com.githrd.test.AvtList
+뷰		 : /WEB-INF/views/test/avtList.jsp
+--------------------------------------------------------------------------------------
+# 아바타 정보 비동기 통신 처리 요청
+요청내용 : /whistle/test/avtInfo.pink
+파라미터 : ano
+컨트롤러 : com.githrd.test.AvtInfo
+뷰		 : json
+--------------------------------------------------------------------------------------
+
+{
+	"ano": "11",
+	"savaname": "img_avatar1.png",
+	"dir": "/img/avatar/",
+	"gen": "M"
+}
+
+success: function(data) {
+data=>
+	var data = {
+		"ano": "11",
+		"savaname": "img_avatar1.png",
+		"dir": "/img/avatar/",
+		"gen": "M"
+	};
+	data.ano
+	data.dir
+}
+
+url: http://localhost/whistle/test/avtInfo.pink?ano=11
 
 
 
