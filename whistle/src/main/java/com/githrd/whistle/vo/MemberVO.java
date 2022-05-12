@@ -1,12 +1,12 @@
 package com.githrd.whistle.vo;
 
+import java.text.*;
 import java.sql.Time;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class MemberVO {
-	private int mno;
-	private String name, id, mail, tel, gen, savename, sdate;
+	private int mno, ano, cnt;
+	private String id, name, pw, mail, tel, sdate, savename, gen;
 	private Date jdate;
 	private Time jtime;
 	
@@ -16,7 +16,18 @@ public class MemberVO {
 	public void setMno(int mno) {
 		this.mno = mno;
 	}
-	
+	public int getAno() {
+		return ano;
+	}
+	public void setAno(int ano) {
+		this.ano = ano;
+	}
+	public int getCnt() {
+		return cnt;
+	}
+	public void setCnt(int cnt) {
+		this.cnt = cnt;
+	}
 	public String getSavename() {
 		return savename;
 	}
@@ -34,6 +45,12 @@ public class MemberVO {
 	}
 	public void setId(String id) {
 		this.id = id;
+	}
+	public String getPw() {
+		return pw;
+	}
+	public void setPw(String pw) {
+		this.pw = pw;
 	}
 	public String getMail() {
 		return mail;
@@ -76,5 +93,26 @@ public class MemberVO {
 	public void setJtime(Time jtime) {
 		this.jtime = jtime;
 	}
-
+	@Override
+	public String toString() {
+		return "MemberVO [mno=" + mno + ", ano=" + ano + ", cnt=" + cnt + ", id=" + id + ", name=" + name + ", pw=" + pw
+				+ ", mail=" + mail + ", tel=" + tel + ", sdate=" + sdate + ", savename=" + savename + ", gen=" + gen
+				+ ", jdate=" + jdate + ", jtime=" + jtime + "]";
+	}
+	
+	public String getJson() {
+		StringBuffer buff = new StringBuffer();
+		buff.append("{\r\n");
+		buff.append("\"mno\": \"" + mno + "\",\r\n");
+		buff.append("\"name\": \"" + name + "\",\r\n");
+		buff.append("\"id\": \"" + id + "\",\r\n");
+		buff.append("\"mail\": \"" + mail + "\",\r\n");
+		buff.append("\"tel\": \"" + tel + "\",\r\n");
+		buff.append("\"savename\": \"" + savename + "\",\r\n");
+		buff.append("\"ano\": \"" + ano + "\",\r\n");
+		buff.append("\"gen\": \"" + (gen.equals("M")?"남자":"여자") + "\",\r\n");
+		buff.append("\"sdate\": \"" + sdate + "\"\r\n");
+		buff.append("}");
+		return buff.toString();
+	}
 }
