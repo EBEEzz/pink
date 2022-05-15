@@ -91,8 +91,8 @@ $(document).ready(function(){
 			$('#repwmsg').html('* # 비밀번호가 일치합니다. *');
 			$('#repwmsg').removeClass('w3-text-green w3-text-red').addClass('w3-text-green');
 			$('#repwmsg').css('display', 'block');
-			$('#repw').parent().parent().stop().slideDown(300).stop().slideUp(300);
-			$('#pw').css('background-color', 'lightgray').prop('readonly', true);
+			//$('#repw').parent().parent().stop().slideDown(300).stop().slideUp(300);
+			//$('#pw').css('background-color', 'lightgray').prop('readonly', true);
 		}
 	});
 	
@@ -103,8 +103,8 @@ $(document).ready(function(){
 		$('#idmsg').css('display', 'none');
 		$('#pwmsg').css('display', 'none');
 		$('#repwmsg').css('display', 'none');
-		//$('#repw').stop().slideDown(300);
-		$('#pw').css('background-color', 'white').prop('readonly', false);
+		//$('#repw').stop().slideDown(300);		- 수정필요
+		//$('#pw').css('background-color', 'white').prop('readonly', false);
 	});
 	
 	// 홈버튼 클릭이벤트
